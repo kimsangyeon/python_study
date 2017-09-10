@@ -38,4 +38,8 @@ print(week)
 list.reverse();
 print(week)
 
+#배열 합치기
+week2 = nums + list
+print(week2)
+
 
