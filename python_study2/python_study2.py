@@ -25,8 +25,14 @@ print('\n' * 3)
 
 hello = "hello"
 world = """world
-my name\'s amy."""
+my name\'s %s.""" % "amy"
 
 printStr = hello + ' ' + world
 print(printStr)
+
+
+number = "this is number : %d " % 1
+print(number)
+
+
 
