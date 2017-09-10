@@ -22,3 +22,10 @@ print("5**2=", 5**2)
 print("5//2=", 5//2)
 
 
+hello = "hello"
+world = """world
+my name\'s amy."""
+
+printStr = hello + ' ' + world
+print(printStr)
+
