@@ -1,5 +1,6 @@
 # coding=utf-8
 # 튜플 (tuple)
+# 리스트와 다른점 : 내용을 바꿀수 없다.
 
 pi_tuple = (3,1,4,1,5,9)
 print(pi_tuple)
@@ -20,3 +21,5 @@ print(pi_tuple[1])
 print(pi_tuple[-2])
 
 print(pi_tuple[3:])
+
+print(pi_tuple * 2)
