@@ -11,3 +11,7 @@ print("안녕하세요")
 
 name = "Amy"
 print(name)
+print("my name is " + name);
+
+name2 = name * 2
+print(name2);
