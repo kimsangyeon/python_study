@@ -14,4 +14,8 @@ print(list[1:3])
 
 days = ['mon', 'tue', 'wed']
 week = [days, list]
+print(week)nums = ['one', 'two', 'three']
+week = [nums, list]
 print(week)
+print(week[1][1])
+print(week[0][0])
