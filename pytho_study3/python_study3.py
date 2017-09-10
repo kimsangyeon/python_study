@@ -42,4 +42,8 @@ print(week)
 week2 = nums + list
 print(week2)
 
+print(len(week2))
+print(max(week2))
+print(min(week2))
+
 
