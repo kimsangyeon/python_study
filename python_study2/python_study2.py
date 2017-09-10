@@ -21,6 +21,7 @@ print("5/2=", 5/2)
 print("5**2=", 5**2)
 print("5//2=", 5//2)
 
+print('\n' * 3)
 
 hello = "hello"
 world = """world
