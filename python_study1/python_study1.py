@@ -8,3 +8,6 @@ print("안녕하세요")
 코멘트
 입니다
 """
+
+name = "Amy"
+print(name)
