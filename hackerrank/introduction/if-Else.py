@@ -1,7 +1,7 @@
 if __name__ == '__main__':
     n = int(input())
 
-    if n % 2 == 1:
+    if n % 2 is 1:
         print("Weird")
     else:
         if 2 <= n <= 5:
