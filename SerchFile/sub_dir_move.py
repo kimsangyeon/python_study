@@ -6,5 +6,7 @@ testDir = '/Users/sangyeon/python_study/SerchFile/test/'
 
 # shutil.move(src + fileName, testDir +fileName)
 
-command = "mv " + src + fileName + " " + testDir
-os.system(command)
+# command = "mv " + src + fileName + " " + testDir
+# os.system(command)
+
+os.rename(src + fileName, testDir + fileName)
