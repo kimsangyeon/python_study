@@ -1,31 +1,36 @@
 import os, shutil
+from sub_dir_mkdir import mkdir
 
 # fileName = 'test.sangyeon'
 # src = '/Users/sangyeon/python_study/SerchFile/'
 # testDir = '/Users/sangyeon/python_study/SerchFile/test/'
-testDir = '/Users/sangyeon/python_study/SerchFile/test'
-docDir = '/Users/sangyeon/python_study/SerchFile/doc'
-docxDir = '/Users/sangyeon/python_study/SerchFile/docx'
-pptDir = '/Users/sangyeon/python_study/SerchFile/ppt'
-pptxDir = '/Users/sangyeon/python_study/SerchFile/pptx'
-xlsxDir = '/Users/sangyeon/python_study/SerchFile/xlsx'
 
-def mv(ext, src, fileName):
+def mv(ext, src, fileName, movePath):
     # shutil.move(src + fileName, testDir +fileName)
     # os.rename(src + fileName, testDir + fileName)
     moveDir = ''
-    if ext == '.txt':
-        poveDir = testDir
-    elif ext == '.doc':
-        oveDir = docDir
+    if ext == '.doc':
+        if os.path.isdir(movePath + 'doc') is not True:
+            mkdir(movePath + 'doc')
+        moveDir = movePath + 'doc'
     elif ext == '.docx':
-        oveDir = docxDir
+        if os.path.isdir(movePath + 'docx') is not True:
+            mkdir(movePath + 'docx')
+        moveDir = movePath + 'docx'
     elif ext == '.ppt':
-        oveDir = pptDir
+        if os.path.isdir(movePath + 'ppt') is not True:
+            mkdir(movePath + 'ppt')
+        moveDir = movePath + 'ppt'
     elif ext == '.pptx':
-        moveDir = pptxDir
+        if os.path.isdir(movePath + 'pptx') is not True:
+            mkdir(movePath + 'pptx')
+        moveDir = movePath + 'pptx'
     elif ext == '.xlsx':
-        moveDir = xlsxDir
+        if os.path.isdir(movePath + 'xlsx') is not True:
+            mkdir(movePath + 'xlsx')
+        moveDir = movePath + 'xlsx'
+    else:
+        return
 
     print 'Before Path: %s' % src
     print 'Move Path: %s ' % moveDir
