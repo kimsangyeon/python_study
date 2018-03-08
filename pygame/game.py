@@ -11,6 +11,7 @@ while not finish:
         # 윈도우의 닫기 버튼이 눌렸을 때, 프로그램을 종료하도록 처리
         if event.type == pygame.QUIT:
             finish = True
-        pygame.display.flip()
+    pygame.draw.rect(screen, (0, 128, 255), pygame.Rect(0, 0, 60, 60))
+    pygame.display.flip()
     # 게임의 상태를 업데이트하는 부분
     # 게임의 상태를 화면에 그려주는 부분 -> 화면을 지우고, 그리고, 업데이트하는 코드가 들어감
