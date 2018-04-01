@@ -1,6 +1,8 @@
 # coding=utf8
 import pygame
 pygame.init()
+pygame.mixer.music.load('SuperMarioBros.mp3')
+pygame.mixer.music.play(-1)
 
 display_width = 500
 display_height = 500
