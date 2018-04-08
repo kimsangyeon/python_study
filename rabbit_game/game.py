@@ -25,6 +25,10 @@ while running:
     for x in range(int(width/grass.get_width()+1)):
         for y in range(int(height/grass.get_height()+1)):
             screen.blit(grass,(x*100,y*100))
+    screen.blit(castle,(0,30))
+    screen.blit(castle,(0,135))
+    screen.blit(castle,(0,240))
+    screen.blit(castle,(0,345 ))
 
     # 6 - draw the screen elements
     screen.blit(player, (100,100))
