@@ -10,6 +10,10 @@ pygame.init()
 width, height = 640, 480
 screen=pygame.display.set_mode((width, height))
 
+# music
+pygame.mixer.music.load('SuperMarioBros.mp3')
+pygame.mixer.music.play(-1)
+
 # FPS
 FPS = 60
 fpsClock = pygame.time.Clock()
@@ -42,10 +46,13 @@ while running:
     screen.blit(castle,(0,345 ))
 
     # 6 - draw the screen elements
-    position = pygame.mouse.get_pos()
-    angle = math.atan2(position[1]-(playerpos[1]+32),position[0]-(playerpos[0]+26))
-    playerrot = pygame.transform.rotate(player, 360-angle*57.29)
-    playerpos1 = (playerpos[0]-playerrot.get_rect().width/2, playerpos[1]-playerrot.get_rect().height/2)
+    mousePos = pygame.mouse.get_pos()
+    # 좌표 (x1, y1) (x2, y2) math.atan2(y2 - y1, x2 - x1) = angle (radian)
+    # 1 radian = 180 /math.pi = 57.29
+    radian = 180 / math.pi
+    angle = math.atan2(mousePos[1] - playerpos[1], mousePos[0] - playerpos[0])
+    playerrot = pygame.transform.rotate(player, 360 - angle * radian)
+    playerpos1 = (playerpos[0] - playerrot.get_rect().width / 2, playerpos[1] - playerrot.get_rect().height / 2)
     screen.blit(playerrot, playerpos1)
     # 7 - update the screen
     pygame.display.flip()
