@@ -27,6 +27,10 @@ arrow = pygame.image.load("resources/images/bullet.png")
 # key input check
 keys = [False, False, False, False]
 
+# arrow
+acc=[0,0]
+arrows=[]
+
 #player place(bunny)
 playerpos = [100, 100]
 
@@ -49,11 +53,27 @@ while running:
     mousePos = pygame.mouse.get_pos()
     # 좌표 (x1, y1) (x2, y2) math.atan2(y2 - y1, x2 - x1) = angle (radian)
     # 1 radian = 180 /math.pi = 57.29
+    # 6.1 - Set player position and rotation
     radian = 180 / math.pi
     angle = math.atan2(mousePos[1] - playerpos[1], mousePos[0] - playerpos[0])
     playerrot = pygame.transform.rotate(player, 360 - angle * radian)
     playerpos1 = (playerpos[0] - playerrot.get_rect().width / 2, playerpos[1] - playerrot.get_rect().height / 2)
     screen.blit(playerrot, playerpos1)
+
+    # 6.2 - Draw arrows
+    for bullet in arrows:
+        index=0
+        velx=math.cos(bullet[0])*10
+        vely=math.sin(bullet[0])*10
+        bullet[1]+=velx
+        bullet[2]+=vely
+        if bullet[1]<-64 or bullet[1]>640 or bullet[2]<-64 or bullet[2]>480:
+            arrows.pop(index)
+        index+=1
+        for projectile in arrows:
+            arrow1 = pygame.transform.rotate(arrow, 360-projectile[0]*57.29)
+            screen.blit(arrow1, (projectile[1], projectile[2]))
+
     # 7 - update the screen
     pygame.display.flip()
     fpsClock.tick(FPS)
@@ -84,6 +104,10 @@ while running:
                 keys[2]=False
             elif event.key==pygame.K_d:
                 keys[3]=False
+        if event.type==pygame.MOUSEBUTTONDOWN:
+            position=pygame.mouse.get_pos()
+            acc[1]+=1
+            arrows.append([math.atan2(position[1]-(playerpos1[1]),position[0]-(playerpos1[0])),playerpos1[0],playerpos1[1]])
     # player pos movement
     if keys[0]:
         playerpos[1]-=5
