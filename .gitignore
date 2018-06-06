@@ -1,2 +1,4 @@
 # ignore
 .idea/*
+flask_server/flaskapp/bin/*
+flask_server/flaskapp/lib/*
