@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Synap Editor</title>
+    <script type="text/javascript" src="synapeditor.js"></script>
+</head>
+
+<body onload="initEditor();">
+<div id="synapEditor" class="container" style="max-width:800px"></div>
+<script>
+    function initEditor() {
+        window.editor = new SynapEditor('synapEditor');
+        const url = '/getSerializedPbDataToUrl';
+
+        fileLoad(url, JSON.stringify({
+            id: null
+        }), setModel);
+    }
+
+    var fileLoad = function (url, param, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status === 200 || xhr.status === 201) {
+                if (!!xhr.responseText) {
+                    var json = JSON.parse(xhr.responseText);
+                    callback(json);
+                }
+            } else {
+                console.error(xhr.statusText);
+            }
+        }
+        xhr.open('POST', url);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.send(param);
+    }
+    var setModel = function (jsonData) {
+        var modelData = jsonData && jsonData.serializedData;
+//            var importPath = jsonData && jsonData.importPath;
+//            var publishingData = jsonData && jsonData.document && jsonData.document.html;
+        var title = jsonData && jsonData.document && jsonData.document.title;
+        if (title) {
+            document.getElementById('docName').disabled = true;
+            document.getElementById('docName').setAttribute('value', title);
+        }
+
+        window.editor.initSEModel(modelData, '', null);
+    }
+</script>
+</body>
+
+</html>

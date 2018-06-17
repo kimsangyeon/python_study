@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0bbc766e-8c5b-4870-84de-674b36814b18" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/flask_server/flaskapp/static/synapeditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flask_server/flaskapp/routes.py" afterPath="$PROJECT_DIR$/flask_server/flaskapp/routes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flask_server/flaskapp/templates/index.html" afterPath="$PROJECT_DIR$/flask_server/flaskapp/templates/index.html" />
     </list>
     <ignored path="python_study.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -217,7 +214,7 @@
     <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Javscript_study" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/django_server" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
@@ -859,12 +856,12 @@
       <workItem from="1524141166470" duration="1835000" />
       <workItem from="1525605913480" duration="26000" />
       <workItem from="1528258608473" duration="1575000" />
-      <workItem from="1528260456689" duration="7277000" />
+      <workItem from="1528260456689" duration="7376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12986000" />
+    <option name="totallyTimeSpent" value="13085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
