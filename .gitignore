@@ -7,3 +7,4 @@ django_server/django_server/bin/*
 django_server/django_server/editor_server/editor_server/__pycache__/*
 django_server/django_server/lib/*
 django_server/.idea/*
+django_server/django_server/editor_server/static/*
