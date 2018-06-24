@@ -11,7 +11,11 @@
 </head>
 
 <body onload="initEditor();">
-<div id="synapEditor" class="container" style="max-width:800px"></div>
+<div id="synapEditor" class="container" style="max-width:800px">
+    <button id='saveBtn'>save</button>
+    <button id='listBtn'>list</button>
+    <button id='newBtn'>new</button>
+</div>
 <script>
     var WAS_SERVER = window.location.protocol + '//' + window.location.host;
 
@@ -28,6 +32,26 @@
             id: id
         }), setModel);
     }
+
+    document.getElementById('newBtn').addEventListener('click', function () {
+        window.location = WAS_SERVER;
+    });
+
+    document.getElementById('listBtn').addEventListener('click', function () {
+        window.location = WAS_SERVER + '/list';
+    });
+
+    document.getElementById('saveBtn').addEventListener('click', function () {
+        var docInfo = {
+            editor: 'synap',
+            title: document.getElementById('docName').value || '제목 없음',
+            id: window.location.search.split('=')[1],
+            html: window.editor.getPublishingHtml()
+        };
+        var path = docInfo.id ? 'updateDocument' : 'saveDocument';
+        var url = WAS_SERVER + '/' + path;
+        ajax.sendJson(url, JSON.stringify(docInfo));
+    });
 
     function setModel(jsonData) {
         var modelData = jsonData && jsonData.serializedData;

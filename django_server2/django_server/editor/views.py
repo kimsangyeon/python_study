@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def app(request):
-    return render(request, 'editor/index.html', {})
+    return render(request, 'editor/list.html', {})
