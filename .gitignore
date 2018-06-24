@@ -8,3 +8,13 @@ django_server/django_server/editor_server/editor_server/__pycache__/*
 django_server/django_server/lib/*
 django_server/.idea/*
 django_server/django_server/editor_server/static/*
+
+django_server2/django_server/bin/*
+django_server2/django_server/django_server/__pycache__/*
+django_server2/django_server/editor/__pycache__/*
+django_server2/django_server/lib/*
+django_server2/.idea/*
+django_server2/django_server/django_server/static/*
+django_server2/myvenv
+
+flask_server/.idea/*
