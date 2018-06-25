@@ -8,4 +8,6 @@ urlpatterns = [
     path('getDocumentList/', views.getDocumentList),
     # url(r'^getDocumentList/', views.getDocumentList, name='getDocumentList'),
     path('saveDocument/', views.saveDocument),
+    path('updateDocument/', views.updateDocument),
+    path('deleteDocument/', views.deleteDocument),
 ]
