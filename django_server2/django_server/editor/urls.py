@@ -1,6 +1,8 @@
-from django.conf.urls import url
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.app, name='app'),
+    path('', views.app),
+    path('newDoc/', views.newDoc),
+    path('getDocumentList/', views.getDocumentList),
 ]

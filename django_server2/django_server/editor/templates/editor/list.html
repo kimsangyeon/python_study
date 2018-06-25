@@ -93,11 +93,11 @@
     var WAS_SERVER = window.location.protocol + '//' + window.location.host;
 
     $('#newDoc').bind('click', function () {
-        window.location = WAS_SERVER;
+        window.location = WAS_SERVER + '/newDoc';
     });
 
     function initDocumentList() {
-        var url = WAS_SERVER + '/getDocumentList';
+        var url = WAS_SERVER + 'getDocumentList';
         $.ajax({
             url: url,
             type: "POST",
